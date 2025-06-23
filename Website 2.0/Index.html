@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            background-color: ghostwhite;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1170px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        ul {
+            list-style: none;
+        }
+        .header {
+            padding: 10px 0;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid #ffffff;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo_img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.header .main_menu {
+    display: flex;
+    align-items: center;
+}
+
+.header .main_menu li a {
+    display: block;
+    color: #000;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    padding: 10px 15px;
+    transition: color 0.3s ease-in-out;
+}
+
+.header .main_menu li {
+    position: relative;
+    white-space: nowrap;
+    margin-left: 15px;
+}
+
+.header .main_menu li:first-child {
+    margin-left: 0;
+}
+
+.header .main_menu li:hover > a {
+    color: orange;
+}
+
+.common_btn a {
+    padding: 10px 30px;
+    border-radius: 40px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #fff;
+    background-color: orange;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.common_btn a:hover {
+    background-color: #ff8c00;
+}
+
+.search {
+    position: relative;
+}
+
+.search input {
+    background-color: #f5f5f5;
+    border: none;
+    border-radius: 6px;
+    padding: 0.7rem;
+    padding-left: 2.4rem;
+    font-size: 14px;
+    width: 100%;
+}
+
+.search .bx-search {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    font-size: 1.3rem;
+    transform: translateY(-50%);
+    opacity: 0.6;
+}
+
+        .banner {
+            position: relative;
+            height: 500px;
+            width: auto;
+            overflow: hidden;
+            background-color: #f5f5f5;
+
+        }
+
+        .banner-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .banner-slide.active {
+            opacity: 1;
+        }
+
+        .banner-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .banner-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .banner-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #fff;
+            z-index: 2;
+        }
+
+        .banner-content h1 {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .banner-content p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .banner-pagination {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: center;
+            z-index: 2;
+        }
+
+        .banner-pagination button {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: none;
+            margin: 0 5px;
+            padding: 0;
+            background-color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+        }
+
+        .banner-pagination button.active {
+            background-color: #ffffff;
+        }
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 40px 0;
+        }
+
+        .container {
+            max-width: 1170px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .footer-column {
+            flex: 1 1 300px;
+            margin-bottom: 30px;
+        }
+
+        .footer-column h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .footer-column p, .footer-column ul {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .social-media {
+            display: flex;
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .social-media li {
+            margin-right: 10px;
+        }
+
+        .social-media a {
+            color: #fff;
+            font-size: 18px;
+        }
+
+        .footer-bottom {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            font-size: 12px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <a href="#">
+                        <img src="logo.png" alt="" class="logo_img">
+                    </a>
+                </div>
+                <nav>
+                    <ul class="main_menu">
+                        <li><a href="#">HOME</a></li>
+                        <li><a href="#">ABOUT</a></li>
+                        <li><a href="#">NEWS</a></li>
+                        <li><a href="#">CONTACT</a></li>
+                    </ul>
+                </nav>
+                <div class="search">
+                    <form role="search">
+                        <input type="search" name="search" placeholder="Search" />
+                        <i class="bx bx-search" aria-hidden="true"></i>
+                    </form>
+                </div>
+                <br>
+                <div class="common_btn">
+                    <a href="#">Login</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="banner">
+        <div class="banner-slides">
+            <div class="banner-slide active">
+                <img src="image1.jpg" alt="Banner Image 1">
+                <div class="banner-overlay"></div>
+                <div class="banner-content">
+                    <h1>Image 1</h1>
+                    <p>Description for Image 1</p>
+                </div>
+            </div>
+            <div class="banner-slide">
+                <img src="image2.jpg" alt="Banner Image 2">
+                <div class="banner-overlay"></div>
+                <div class="banner-content">
+                    <h1>Image 2</h1>
+                    <p>Description for Image 2</p>
+                </div>
+            </div>
+            <div class="banner-slide">
+                <img src="image3.jpg" alt="Banner Image 3">
+                <div class="banner-overlay"></div>
+                <div class="banner-content">
+                    <h1>Image 3</h1>
+                    <p>Description for Image 3</p>
+                </div>
+            </div>
+        </div>
+        <div class="banner-pagination"></div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>About Us</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean varius odio sed lacinia dignissim. Nullam et tincidunt sem.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li>Address: 123 Street, City, Country</li>
+                        <li>Phone: +1 234 567890</li>
+                        <li>Email: info@example.com</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Follow Us</h3>
+                    <ul class="social-media">
+                        <li><a href="#"><i class="bx bxl-facebook"></i></a></li>
+                        <li><a href="#"><i class="bx bxl-twitter"></i></a></li>
+                        <li><a href="#"><i class="bx bxl-instagram"></i></a></li>
+                        <li><a href="#"><i class="bx bxl-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Your Website. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const slides = document.querySelectorAll('.banner-slide');
+        const pagination = document.querySelector('.banner-pagination');
+
+        let currentSlide = 0;
+        let timer;
+
+        // Add pagination buttons
+        for (let i = 0; i < slides.length; i++) {
+            const button = document.createElement('button');
+            button.addEventListener('click', () => goToSlide(i));
+            pagination.appendChild(button);
+        }
+
+        // Initialize the slideshow
+        goToSlide(0);
+
+        // Start slideshow timer
+        startTimer();
+
+        function goToSlide(slideIndex) {
+            // Hide all slides and remove active class
+            slides.forEach((slide) => slide.classList.remove('active'));
+
+            // Show the selected slide and add active class
+            slides[slideIndex].classList.add('active');
+
+            // Update current slide index
+            currentSlide = slideIndex;
+
+            // Update pagination buttons
+            const buttons = pagination.querySelectorAll('button');
+            buttons.forEach((button, index) => {
+                if (index === slideIndex) {
+                    button.classList.add('active');
+                } else {
+                    button.classList.remove('active');
+                }
+            });
+
+            // Restart the timer
+            clearInterval(timer);
+            startTimer();
+        }
+
+        function startTimer() {
+            timer = setInterval(() => {
+                let nextSlide = currentSlide + 1;
+                if (nextSlide === slides.length) {
+                    nextSlide = 0;
+                }
+                goToSlide(nextSlide);
+            }, 3000); // Change slide every 3 seconds
+        }
+    </script>
+</body>
+</html>
