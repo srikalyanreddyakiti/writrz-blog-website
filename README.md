@@ -1,20 +1,21 @@
-# 📝 Writrz Blog Website
+# Writrz Blog Website
 
-The **Writrz Blog Website** is a clean, responsive blog platform built using HTML and CSS to showcase articles related to AI, web development, and tech trends.
+The **Writrz Blog Website** is a clean and responsive blog platform built using HTML and CSS to showcase articles related to AI, web development, and technology trends.
+
 ---
 
-## 🔍 Features
+## Features
 
 - Blog homepage listing articles with summaries  
 - Individual post pages (`post1.html`, `post2.html`, etc.)  
 - Responsive layout compatible with desktop and mobile  
 - Clean navigation with consistent Writrz branding  
-- Reusable styles via `style.css`  
-- Easy to expand for more posts or categories
+- Reusable styles through `style.css`  
+- Easy to expand for more posts or categories  
 
 ---
 
-## 🗂️ Project Structure
+## Project Structure
 
 ```
 writrz-blog-website/
@@ -30,17 +31,15 @@ writrz-blog-website/
 
 ---
 
-## ✍️ Sample Blog Topics
+## Sample Blog Topics
 
-- ✅ *AI in Web Design: The Next Frontier*  
-- ✅ *Top 5 CSS Tricks for Cleaner Code*  
-- (More articles can be added easily by duplicating post templates)
+- AI in Web Design: The Next Frontier  
+- Top 5 CSS Tricks for Cleaner Code  
+- (More articles can be added easily by duplicating post templates)  
 
 ---
 
-## ✍️ Author
+## Author
 
 **Akiti Sri Kalyan Reddy**  
-Data science and artificial intelligence 
-
----
+Data Science and Artificial Intelligence  
